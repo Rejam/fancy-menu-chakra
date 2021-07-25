@@ -1,40 +1,26 @@
-import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { Box, BoxProps } from "@chakra-ui/react";
 
-import AnimatedNavbar from "./components/AnimatedNavbar";
+import AnimatedNavbar from "./AnimatedNavbar";
+import ThemeProvider from "./theme";
 
-const Main = (p: any) => <Box as="main" minH="100vh" {...p} />;
-const AppContainer = (p: any) => (
-  <Box display="flex" flex-direction="column" background="appBg" {...p} />
+const AppContainer = (p: BoxProps) => (
+  <Box
+    bgGradient="linear(to-r, green.300, blue.300, purple.300)"
+    display="flex"
+    flexDirection="column"
+    minH="100vh"
+    {...p}
+  />
 );
+const Main = (p: BoxProps) => <Box as="main" {...p} />;
 
 export default function App() {
   return (
-    <ChakraProvider
-      theme={extendTheme({
-        colors: {
-          appBg: "#53f"
-        },
-        components: {
-          List: {
-            parts: ["list"],
-            baseStyle: {
-              // listStyle: "none",
-              // listStyleType: "none",
-              color: "green"
-            },
-            defaultProps: {
-              // listStyle: "none",
-              // listStyleType: "none",
-              color: "red"
-            }
-          }
-        }
-      })}
-    >
+    <ThemeProvider>
       <AppContainer>
         <AnimatedNavbar />
         <Main></Main>
       </AppContainer>
-    </ChakraProvider>
+    </ThemeProvider>
   );
 }
