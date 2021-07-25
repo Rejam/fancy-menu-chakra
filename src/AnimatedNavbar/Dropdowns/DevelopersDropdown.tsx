@@ -1,4 +1,5 @@
 import { Box, BoxProps } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 import {
   DropdownSection,
@@ -52,25 +53,27 @@ export default function DevelopersDropdown() {
           </Flex>
         </div>
       </DropdownSection>
-      <DropdownSection>
-        <ul>
-          <HeadingLink>
-            <a href="/">
-              <Icon /> Full API Reference
-            </a>
-          </HeadingLink>
-          <HeadingLink>
-            <a href="/">
-              <Icon /> API Status
-            </a>
-          </HeadingLink>
-          <HeadingLink>
-            <a href="/">
-              <Icon /> Open Source
-            </a>
-          </HeadingLink>
-        </ul>
-      </DropdownSection>
+      <motion.div layoutId="menu-sub">
+        <DropdownSection bg="gray.200">
+          <ul>
+            <HeadingLink>
+              <a href="/">
+                <Icon /> Full API Reference
+              </a>
+            </HeadingLink>
+            <HeadingLink>
+              <a href="/">
+                <Icon /> API Status
+              </a>
+            </HeadingLink>
+            <HeadingLink>
+              <a href="/">
+                <Icon /> Open Source
+              </a>
+            </HeadingLink>
+          </ul>
+        </DropdownSection>
+      </motion.div>
     </DevelopersDropdownContainer>
   );
 }

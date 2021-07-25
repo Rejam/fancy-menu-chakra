@@ -54,15 +54,3 @@ export const Heading = ({ color, ...props }: HeadingProps) => (
 );
 
 export const LinkList = (props: BoxProps) => <Box as="ul" ml={0} {...props} />;
-
-export const WorksWithStripe = (props: BoxProps) => (
-  <Box
-    display="flex"
-    borderTop="2px solid #fff"
-    justifyContent="center"
-    alignItems="center"
-    marginTop="var(--chakra-space-7)"
-    paddingTop="var(--chakra-space-7)"
-    {...props}
-  />
-);

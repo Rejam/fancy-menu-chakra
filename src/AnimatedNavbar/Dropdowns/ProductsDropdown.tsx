@@ -1,13 +1,7 @@
 import { Box, BoxProps, Flex, SimpleGrid } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
-import {
-  DropdownSection,
-  Logo,
-  Icon,
-  Heading,
-  WorksWithStripe,
-  HeadingProps,
-} from "../shared";
+import { DropdownSection, Logo, Icon, Heading, HeadingProps } from "../shared";
 
 const ProductsDropdownContainer = (props: BoxProps) => (
   <Box w={["calc(100vw - 2rem)", null, "29rem"]} {...props} />
@@ -15,6 +9,17 @@ const ProductsDropdownContainer = (props: BoxProps) => (
 const ProductsSection = (props: BoxProps) => <Box as="ul" {...props} />;
 const SubProductsListHeading = (props: HeadingProps) => (
   <Heading as="h3" {...props} />
+);
+const WorksWithStripe = (props: BoxProps) => (
+  <Box
+    display="flex"
+    borderTop="2px solid #fff"
+    justifyContent="center"
+    alignItems="center"
+    marginTop="var(--chakra-space-7)"
+    paddingTop="var(--chakra-space-7)"
+    {...props}
+  />
 );
 
 export default function ProductsDropdown() {
@@ -59,27 +64,29 @@ export default function ProductsDropdown() {
           </Flex>
         </ProductsSection>
       </DropdownSection>
-      <DropdownSection>
-        <SimpleGrid
-          gridTemplateColumns={["auto auto"]}
-          alignItems="center"
-          columnGap="1rem"
-        >
-          <Heading fontSize="lg">Sigma</Heading>
-          <div>Your business data at your fingertips.</div>
-          <Heading fontSize="lg">Atlas</Heading>
-          <div>The best way to start an internet business.</div>
-          <Heading fontSize="lg">Radar</Heading>
-          <div>Fight fraud with machine learning.</div>
-        </SimpleGrid>
-        <WorksWithStripe>
-          <Heading>
-            <a href="/">
-              <Icon /> Works with Stripe
-            </a>
-          </Heading>
-        </WorksWithStripe>
-      </DropdownSection>
+      <motion.div layoutId="menu-sub">
+        <DropdownSection bg="gray.200">
+          <SimpleGrid
+            gridTemplateColumns={["auto auto"]}
+            alignItems="center"
+            columnGap="1rem"
+          >
+            <Heading fontSize="lg">Sigma</Heading>
+            <div>Your business data at your fingertips.</div>
+            <Heading fontSize="lg">Atlas</Heading>
+            <div>The best way to start an internet business.</div>
+            <Heading fontSize="lg">Radar</Heading>
+            <div>Fight fraud with machine learning.</div>
+          </SimpleGrid>
+          <WorksWithStripe>
+            <Heading>
+              <a href="/">
+                <Icon /> Works with Stripe
+              </a>
+            </Heading>
+          </WorksWithStripe>
+        </DropdownSection>
+      </motion.div>
     </ProductsDropdownContainer>
   );
 }

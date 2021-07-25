@@ -7,7 +7,6 @@ const ButtonTheme = {
       fontSize: "18px",
       fontWeight: "bold",
       borderRadius: "0",
-      borderTop: "4px solid transparent",
       transition: "opacity 250ms",
       variant: "outline",
       cursor: "pointer",

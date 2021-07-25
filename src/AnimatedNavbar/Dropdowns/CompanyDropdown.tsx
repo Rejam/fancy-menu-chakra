@@ -1,4 +1,5 @@
 import { Box, BoxProps } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import {
   Heading,
   HeadingLink,
@@ -41,25 +42,27 @@ export default function CompanyDropdown() {
           </HeadingLink>
         </ul>
       </DropdownSection>
-      <DropdownSection>
-        <div>
-          <Heading>
-            <Icon />
-            From the Blog
-          </Heading>
-          <LinkList ml="1.5rem">
-            <li>
-              <a href="/">Stripe Atlas &rsaquo;</a>
-            </li>
-            <li>
-              <a href="/">Stripe Home &rsaquo;</a>
-            </li>
-            <li>
-              <a href="/">Improved Fraud Detection &rsaquo;</a>
-            </li>
-          </LinkList>
-        </div>
-      </DropdownSection>
+      <motion.div layoutId="menu-sub">
+        <DropdownSection bg="gray.200">
+          <div>
+            <Heading>
+              <Icon />
+              From the Blog
+            </Heading>
+            <LinkList ml="1.5rem">
+              <li>
+                <a href="/">Stripe Atlas &rsaquo;</a>
+              </li>
+              <li>
+                <a href="/">Stripe Home &rsaquo;</a>
+              </li>
+              <li>
+                <a href="/">Improved Fraud Detection &rsaquo;</a>
+              </li>
+            </LinkList>
+          </div>
+        </DropdownSection>
+      </motion.div>
     </CompanyDropdownContainer>
   );
 }

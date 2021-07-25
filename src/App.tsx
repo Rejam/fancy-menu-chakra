@@ -5,7 +5,7 @@ import ThemeProvider from "./theme";
 
 const AppContainer = (p: BoxProps) => (
   <Box
-    bgGradient="linear(to-r, green.400, blue.500)"
+    bgGradient="linear(to-r, green.300, blue.300, purple.300)"
     display="flex"
     flexDirection="column"
     minH="100vh"
