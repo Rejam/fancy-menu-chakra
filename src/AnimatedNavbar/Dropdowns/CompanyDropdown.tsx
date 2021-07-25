@@ -1,5 +1,5 @@
 import { Box, BoxProps } from "@chakra-ui/react";
-import { Heading, HeadingLink, LinkList, Icon } from "../elements";
+import { Heading, HeadingLink, LinkList, Icon } from "../shared";
 
 const DropdownSection = (props: BoxProps) => (
   <Box

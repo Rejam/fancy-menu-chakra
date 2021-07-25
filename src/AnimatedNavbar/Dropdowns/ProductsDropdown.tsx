@@ -7,7 +7,7 @@ import {
   Heading,
   WorksWithStripe,
   HeadingProps,
-} from "../elements";
+} from "../shared";
 
 const ProductsSection = ({ sx = {}, ...props }: BoxProps) => (
   <Box as="ul" {...props} />

@@ -6,7 +6,7 @@ import {
   LinkList,
   HeadingLink,
   Icon,
-} from "../elements";
+} from "../shared";
 
 const DevelopersDropdownEl = (props: BoxProps) => <Box w="25rem" {...props} />;
 
