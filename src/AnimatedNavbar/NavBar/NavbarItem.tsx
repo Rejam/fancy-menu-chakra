@@ -35,12 +35,24 @@ interface NavbarItemProps extends BoxProps {
   onMouseEnter: any;
   title: string;
   children: any;
+  indicator?: any;
 }
 export default function NavbarItem(props: NavbarItemProps) {
-  const { title, children } = props;
+  const { title, indicator, children } = props;
   return (
     <NavbarItemContainer onFocus={props.onMouseEnter} {...props}>
-      <NavbarItemButton>{title}</NavbarItemButton>
+      <NavbarItemButton>
+        {indicator && (
+          <Flipped flipId="indicator">
+            <Box position="absolute" top="0" w="100%" h="100%">
+              {indicator}
+            </Box>
+          </Flipped>
+        )}
+        <Box as="span" zIndex="1">
+          {title}
+        </Box>
+      </NavbarItemButton>
       <DropdownSlot>{children}</DropdownSlot>
     </NavbarItemContainer>
   );

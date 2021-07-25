@@ -21,39 +21,53 @@ const Navbar = (props: BoxProps) => (
 
 export default function AnimatedNavbar() {
   const [activeIndices, setActiveIndices] = useState<number[]>([]);
+  const lastActive = activeIndices[activeIndices.length - 1];
 
-  const onMouseEnter = (i: number) => {
-    const isLastActive = activeIndices[activeIndices.length - 1] === i;
-    if (isLastActive) return;
-    setActiveIndices((cur) => [...cur, i]);
+  const onMouseEnter = (newIndex: number) => {
+    const isSameLastActive = lastActive === newIndex;
+    if (isSameLastActive) return;
+    setActiveIndices((cur) => [...cur, newIndex]);
   };
 
   const onMouseLeave = () => setActiveIndices([]);
 
-  const currentIndex = activeIndices[activeIndices.length - 1];
-  // const currentIndex = 0;
-
-  const isValidDropdownIndex = typeof currentIndex === "number";
   if (!navbarConfig) return null;
-  const CurrentDropdown = isValidDropdownIndex
-    ? navbarConfig[currentIndex].dropdown
-    : undefined;
 
   return (
-    <Flipper flipKey={currentIndex}>
+    <Flipper flipKey={lastActive}>
       <Navbar>
         <NavbarList onMouseLeave={onMouseLeave}>
           {navbarConfig.map((n, index) => {
+            const isActive = lastActive === index;
+            const Dropdown = n.dropdown;
             return (
               <NavbarItem
                 key={n.title}
                 title={n.title}
                 onMouseEnter={() => onMouseEnter(index)}
                 zIndex={999 - index}
+                indicator={
+                  isActive ? (
+                    // <Box
+                    //   w="calc(100% - 3rem)"
+                    //   mx="auto"
+                    //   minW="50px"
+                    //   h="200%"
+                    //   bg="white"
+                    // />
+                    <Box
+                      w="100%"
+                      pt="100%"
+                      bg="rgba(0,0,0, 0.2)"
+                      borderRadius="16px"
+                      transform="translateY(-25%) skewX(-10deg)"
+                    />
+                  ) : null
+                }
               >
-                {CurrentDropdown && index === currentIndex ? (
+                {isActive ? (
                   <DropdownContainer>
-                    <CurrentDropdown />
+                    <Dropdown />
                   </DropdownContainer>
                 ) : null}
               </NavbarItem>
