@@ -8,14 +8,14 @@ import {
   Icon,
 } from "../shared";
 
-const DevelopersDropdownEl = (props: BoxProps) => (
+const DevelopersDropdownContainer = (props: BoxProps) => (
   <Box w={["calc(100vw - 2rem)", null, "25rem"]} {...props} />
 );
 const Flex = (props: BoxProps) => <Box display="flex" {...props} />;
 
 export default function DevelopersDropdown() {
   return (
-    <DevelopersDropdownEl>
+    <DevelopersDropdownContainer>
       <DropdownSection>
         <div>
           <Heading>Documentation</Heading>
@@ -71,6 +71,6 @@ export default function DevelopersDropdown() {
           </HeadingLink>
         </ul>
       </DropdownSection>
-    </DevelopersDropdownEl>
+    </DevelopersDropdownContainer>
   );
 }

@@ -19,7 +19,7 @@ export const Logo = ({ color = "blue", ...props }: BoxProps) => (
     marginRight="16px"
     borderRadius="100%"
     opacity="0.6"
-    backgroundColor={`var(--chakra-colors-${color})`}
+    backgroundColor={`var(--${color})`}
     {...props}
   />
 );
@@ -29,7 +29,7 @@ export const Icon = (props: BoxProps) => (
     width="13px"
     height="13px"
     marginRight="13px"
-    backgroundColor="var(--chakra-colors-blue)"
+    backgroundColor="var(--blue)"
     opacity="0.8"
     display="inline-block"
     {...props}
@@ -46,9 +46,9 @@ export const Heading = ({ color, ...props }: HeadingProps) => (
     textTransform="uppercase"
     fontWeight="bold"
     fontSize="1.1rem"
-    color={
-      color ? `var(--chakra-colors-${color})` : "var(--chakra-colors-blue)"
-    }
+    // color={
+    //   color ? `var(--${color})` : "var(--blue)"
+    // }
     {...props}
   />
 );

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Flipper } from "react-flip-toolkit";
 import { Box, BoxProps } from "@chakra-ui/react";
 
 import NavbarList from "./NavBar/NavbarList";
@@ -27,9 +28,7 @@ export default function AnimatedNavbar() {
     setActiveIndices((cur) => [...cur, i]);
   };
 
-  const onMouseLeave = () => {
-    setActiveIndices([]);
-  };
+  const onMouseLeave = () => setActiveIndices([]);
 
   const currentIndex = activeIndices[activeIndices.length - 1];
   // const currentIndex = 0;
@@ -41,25 +40,27 @@ export default function AnimatedNavbar() {
     : undefined;
 
   return (
-    <Navbar>
-      <NavbarList onMouseLeave={onMouseLeave}>
-        {navbarConfig.map((n, index) => {
-          return (
-            <NavbarItem
-              key={n.title}
-              title={n.title}
-              onMouseEnter={() => onMouseEnter(index)}
-              zIndex={999 - index}
-            >
-              {CurrentDropdown && index === currentIndex ? (
-                <DropdownContainer>
-                  <CurrentDropdown />
-                </DropdownContainer>
-              ) : null}
-            </NavbarItem>
-          );
-        })}
-      </NavbarList>
-    </Navbar>
+    <Flipper flipKey={currentIndex}>
+      <Navbar>
+        <NavbarList onMouseLeave={onMouseLeave}>
+          {navbarConfig.map((n, index) => {
+            return (
+              <NavbarItem
+                key={n.title}
+                title={n.title}
+                onMouseEnter={() => onMouseEnter(index)}
+                zIndex={999 - index}
+              >
+                {CurrentDropdown && index === currentIndex ? (
+                  <DropdownContainer>
+                    <CurrentDropdown />
+                  </DropdownContainer>
+                ) : null}
+              </NavbarItem>
+            );
+          })}
+        </NavbarList>
+      </Navbar>
+    </Flipper>
   );
 }

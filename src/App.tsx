@@ -2,11 +2,10 @@ import { Box, BoxProps } from "@chakra-ui/react";
 
 import AnimatedNavbar from "./AnimatedNavbar";
 import ThemeProvider from "./theme";
-// import AnimatedNavbar from "./old";
 
 const AppContainer = (p: BoxProps) => (
   <Box
-    bg="base.500"
+    bgGradient="linear(to-r, green.400, blue.500)"
     display="flex"
     flexDirection="column"
     minH="100vh"

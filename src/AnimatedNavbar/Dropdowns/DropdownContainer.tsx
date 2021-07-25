@@ -1,3 +1,4 @@
+import { Flipped } from "react-flip-toolkit";
 import { Box, BoxProps } from "@chakra-ui/react";
 
 const Caret = (props: BoxProps) => (
@@ -38,8 +39,12 @@ export default function DropdownContainer({
 }: DropdownContainerProps) {
   return (
     <Box {...props}>
-      <Caret />
-      <DropdownBackground>{children}</DropdownBackground>
+      <Flipped flipId="dropdown-caret">
+        <Caret />
+      </Flipped>
+      <Flipped flipId="dropdown">
+        <DropdownBackground>{children}</DropdownBackground>
+      </Flipped>
     </Box>
   );
 }

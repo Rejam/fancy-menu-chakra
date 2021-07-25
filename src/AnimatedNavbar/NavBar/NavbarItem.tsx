@@ -1,4 +1,5 @@
 import { Box, BoxProps, ButtonProps, Button } from "@chakra-ui/react";
+import { Flipped } from "react-flip-toolkit";
 
 const NavbarItemContainer = (props: BoxProps) => (
   <Box
@@ -15,32 +16,8 @@ const NavbarItemContainer = (props: BoxProps) => (
   />
 );
 
-const hoverStyles = {
-  // opacity: 0.7,
-  outline: "none",
-  // textDecoration: ["underline", null, "none"],
-};
-const NavbarItemTitle = (props: ButtonProps) => (
-  <Button
-    display="flex"
-    justifyContent="center"
-    p="1.5rem 1.5rem 1.2rem 1.5rem"
-    h="unset"
-    fontSize="18px"
-    fontWeight="bold"
-    color="white"
-    border="0"
-    borderRadius="0"
-    transition="opacity 250ms"
-    boxShadow="none !important"
-    _focus={{ bg: "base.600" }}
-    // _focus={{ bg: "base.600" }}
-    // _hover={{ ...hoverStyles }}
-    // _focus={{ ...hoverStyles }}
-    cursor="pointer"
-    zIndex="2"
-    {...props}
-  />
+const NavbarItemButton = (props: ButtonProps) => (
+  <Button variant="NavItemBtn" {...props} />
 );
 
 const DropdownSlot = (props: BoxProps) => (
@@ -63,7 +40,7 @@ export default function NavbarItem(props: NavbarItemProps) {
   const { title, children } = props;
   return (
     <NavbarItemContainer onFocus={props.onMouseEnter} {...props}>
-      <NavbarItemTitle>{title}</NavbarItemTitle>
+      <NavbarItemButton>{title}</NavbarItemButton>
       <DropdownSlot>{children}</DropdownSlot>
     </NavbarItemContainer>
   );

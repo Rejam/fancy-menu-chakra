@@ -9,11 +9,13 @@ import "@fontsource/karla/700.css";
 
 import "./index.css";
 import { global } from "./global";
+import Button from "./components/Button";
 
 export default function ThemeProvider(props: any) {
   return (
     <ChakraProvider
       theme={extendTheme(
+        withDefaultColorScheme({ colorScheme: baseTheme.colors.green[500] }),
         {
           fonts: {
             body: "karla, serif",
@@ -22,28 +24,13 @@ export default function ThemeProvider(props: any) {
           style: {
             global,
           },
-          colors: {
-            base: baseTheme.colors.blue,
-            white: "#fff",
-            grey: "#f1f4f8b0",
-            "dark-grey": "#6b7c93",
-            green: "#24b47e",
-            teal: "#4F96CE",
-            blue: "#6772e5",
-            "dark-blue": "#4F3EF5",
-          },
           spacing: {
             spacer: "28px",
           },
           components: {
-            Button: {
-              defaultProps: {
-                // variant: "ghost",
-              },
-            },
+            Button,
           },
-        },
-        withDefaultColorScheme({ colorScheme: "base" })
+        }
       )}
       {...props}
     />
