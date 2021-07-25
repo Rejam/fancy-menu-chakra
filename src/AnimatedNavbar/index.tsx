@@ -49,6 +49,7 @@ export default function AnimatedNavbar() {
               key={n.title}
               title={n.title}
               onMouseEnter={() => onMouseEnter(index)}
+              zIndex={999 - index}
             >
               {CurrentDropdown && index === currentIndex ? (
                 <DropdownContainer>

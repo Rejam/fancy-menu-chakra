@@ -38,7 +38,7 @@ export default function ThemeProvider(props: any) {
           components: {
             Button: {
               defaultProps: {
-                variant: "ghost",
+                // variant: "ghost",
               },
             },
           },

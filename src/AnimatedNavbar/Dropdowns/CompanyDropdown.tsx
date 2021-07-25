@@ -1,17 +1,14 @@
 import { Box, BoxProps } from "@chakra-ui/react";
-import { Heading, HeadingLink, LinkList, Icon } from "../shared";
-
-const DropdownSection = (props: BoxProps) => (
-  <Box
-    padding="var(--chakra-space-7)"
-    position="relative"
-    z-index="1"
-    {...props}
-  />
-);
+import {
+  Heading,
+  HeadingLink,
+  LinkList,
+  Icon,
+  DropdownSection,
+} from "../shared";
 
 const CompanyDropdownContainer = ({ sx, ...props }: BoxProps) => (
-  <Box width="23rem" {...props} />
+  <Box w={["calc(100vw - 2rem)", null, "23rem"]} {...props} />
 );
 
 export default function CompanyDropdown() {
@@ -50,7 +47,7 @@ export default function CompanyDropdown() {
             <Icon />
             From the Blog
           </Heading>
-          <LinkList marginLeft="25px">
+          <LinkList ml="1.5rem">
             <li>
               <a href="/">Stripe Atlas &rsaquo;</a>
             </li>

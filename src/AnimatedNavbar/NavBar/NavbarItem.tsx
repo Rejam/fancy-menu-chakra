@@ -3,11 +3,11 @@ import { Box, BoxProps, ButtonProps, Button } from "@chakra-ui/react";
 const NavbarItemContainer = (props: BoxProps) => (
   <Box
     as="li"
-    position="relative"
+    position={[null, null, "relative"]}
     listStyleType="none"
     ml="0.5rem"
     justifyContent="center"
-    margin="0"
+    m="0"
     _first={{
       ml: 0,
     }}
@@ -16,27 +16,29 @@ const NavbarItemContainer = (props: BoxProps) => (
 );
 
 const hoverStyles = {
-  opacity: 0.7,
+  // opacity: 0.7,
   outline: "none",
+  // textDecoration: ["underline", null, "none"],
 };
 const NavbarItemTitle = (props: ButtonProps) => (
   <Button
-    border="0"
-    borderRadius="0"
-    fontWeight="bold"
-    fontSize="18px"
-    padding="1.5rem 1.5rem 1.2rem 1.5rem"
-    color="white"
-    fontFamily="inherit"
     display="flex"
     justifyContent="center"
-    transition="opacity 250ms"
-    cursor="pointer"
-    position="relative"
+    p="1.5rem 1.5rem 1.2rem 1.5rem"
     h="unset"
+    fontSize="18px"
+    fontWeight="bold"
+    color="white"
+    border="0"
+    borderRadius="0"
+    transition="opacity 250ms"
+    boxShadow="none !important"
+    _focus={{ bg: "base.600" }}
+    // _focus={{ bg: "base.600" }}
+    // _hover={{ ...hoverStyles }}
+    // _focus={{ ...hoverStyles }}
+    cursor="pointer"
     zIndex="2"
-    _hover={{ ...hoverStyles }}
-    _focus={{ ...hoverStyles }}
     {...props}
   />
 );
@@ -44,14 +46,15 @@ const NavbarItemTitle = (props: ButtonProps) => (
 const DropdownSlot = (props: BoxProps) => (
   <Box
     position="absolute"
-    left="50%"
-    transform="translateX(-50%)"
+    left={["1rem", null, "50%"]}
+    right={["1rem", null, "unset"]}
+    transform={[null, null, "translateX(-50%)"]}
     perspective="1000px"
     {...props}
   />
 );
 
-interface NavbarItemProps {
+interface NavbarItemProps extends BoxProps {
   onMouseEnter: any;
   title: string;
   children: any;

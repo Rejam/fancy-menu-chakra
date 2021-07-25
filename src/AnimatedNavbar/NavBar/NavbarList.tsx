@@ -1,7 +1,13 @@
 import { chakra, ListProps } from "@chakra-ui/react";
 
 const MainNavList = (props: ListProps) => (
-  <chakra.ul mx="0" display="flex" justifyContent="center" {...props} />
+  <chakra.ul
+    mx="0"
+    display="flex"
+    justifyContent="center"
+    position="relative"
+    {...props}
+  />
 );
 
 interface NavbarListProps {

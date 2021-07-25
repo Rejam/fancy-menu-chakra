@@ -9,14 +9,10 @@ import {
   HeadingProps,
 } from "../shared";
 
-const ProductsSection = ({ sx = {}, ...props }: BoxProps) => (
-  <Box as="ul" {...props} />
-);
-
 const ProductsDropdownContainer = (props: BoxProps) => (
-  <Box width={"29rem"} {...props} />
+  <Box w={["calc(100vw - 2rem)", null, "29rem"]} {...props} />
 );
-
+const ProductsSection = (props: BoxProps) => <Box as="ul" {...props} />;
 const SubProductsListHeading = (props: HeadingProps) => (
   <Heading as="h3" {...props} />
 );

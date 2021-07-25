@@ -4,7 +4,7 @@ const Caret = (props: BoxProps) => (
   <Box
     className="caret"
     position="absolute"
-    display="block"
+    display={["none", null, "block"]}
     width="0"
     height="0"
     borderWidth="10px"
