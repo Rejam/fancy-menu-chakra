@@ -21,7 +21,7 @@ const Navbar = (props: BoxProps) => (
 export default function AnimatedNavbar() {
   const [activeIndices, setActiveIndices] = useState<number[]>([]);
   const lastActive = activeIndices[activeIndices.length - 1];
-  const colors = useColors(["green.800", "blue.800", "purple.800"]);
+  const colors = useColors(["green.500", "blue.500", "purple.500"]);
 
   const onMouseEnter = (newIndex: number) => {
     const isSameLastActive = lastActive === newIndex;

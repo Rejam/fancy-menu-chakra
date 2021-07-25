@@ -1,5 +1,5 @@
-import { Box, BoxProps } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { Box, BoxProps, Text } from "@chakra-ui/react";
 
 import {
   DropdownSection,
@@ -19,9 +19,13 @@ export default function DevelopersDropdown() {
     <DevelopersDropdownContainer>
       <DropdownSection>
         <div>
-          <Heading>Documentation</Heading>
-          <p>Start integrating Stripe&rsquo;s products and tools</p>
-          <Flex>
+          <Heading color="blue.500" mb={2}>
+            Documentation
+          </Heading>
+          <Text fontWeight="700">
+            Start integrating Stripe&rsquo;s products and tools
+          </Text>
+          <Flex mt={2}>
             <Box mr="48px">
               <h4>Get Started</h4>
               <LinkList>
@@ -58,17 +62,17 @@ export default function DevelopersDropdown() {
           <ul>
             <HeadingLink>
               <a href="/">
-                <Icon /> Full API Reference
+                <Icon backgroundColor="blue.400" /> Full API Reference
               </a>
             </HeadingLink>
             <HeadingLink>
               <a href="/">
-                <Icon /> API Status
+                <Icon backgroundColor="blue.400" /> API Status
               </a>
             </HeadingLink>
             <HeadingLink>
               <a href="/">
-                <Icon /> Open Source
+                <Icon backgroundColor="blue.400" /> Open Source
               </a>
             </HeadingLink>
           </ul>

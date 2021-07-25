@@ -19,7 +19,8 @@ export default function CompanyDropdown() {
         <ul>
           <HeadingLink>
             <a href="/">
-              <Icon /> About Stripe
+              <Icon />
+              About Stripe
             </a>
           </HeadingLink>
           <HeadingLink>

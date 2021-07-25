@@ -12,14 +12,14 @@ export const DropdownSection = (props: BoxProps) => (
   />
 );
 
-export const Logo = ({ color = "blue", ...props }: BoxProps) => (
+export const Logo = ({ color, ...props }: BoxProps) => (
   <Box
     width="38px"
     height="38px"
     marginRight="16px"
     borderRadius="100%"
     opacity="0.6"
-    backgroundColor={`var(--${color})`}
+    backgroundColor={color}
     {...props}
   />
 );
@@ -29,7 +29,7 @@ export const Icon = (props: BoxProps) => (
     width="13px"
     height="13px"
     marginRight="13px"
-    backgroundColor="var(--blue)"
+    backgroundColor="blue.500"
     opacity="0.8"
     display="inline-block"
     {...props}
@@ -40,15 +40,12 @@ export interface HeadingProps extends BoxProps {
   color?: any;
 }
 export const HeadingLink = (props: HeadingProps) => <Box as="li" {...props} />;
-export const Heading = ({ color, ...props }: HeadingProps) => (
+export const Heading = ({ ...props }: HeadingProps) => (
   <ChakraHeading
     as="h3"
     textTransform="uppercase"
     fontWeight="bold"
     fontSize="1.1rem"
-    // color={
-    //   color ? `var(--${color})` : "var(--blue)"
-    // }
     {...props}
   />
 );

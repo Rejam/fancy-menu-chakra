@@ -29,10 +29,10 @@ export default function ProductsDropdown() {
         <ProductsSection>
           <Flex>
             <div>
-              <Logo color="blue" />
+              <Logo color="blue.500" />
             </div>
             <div>
-              <SubProductsListHeading color="blue">
+              <SubProductsListHeading color="green.500">
                 Payments
               </SubProductsListHeading>
               <p>A complete payments platform</p>
@@ -40,10 +40,10 @@ export default function ProductsDropdown() {
           </Flex>
           <Flex mt="1rem">
             <div>
-              <Logo color="green" />
+              <Logo color="green.500" />
             </div>
             <div>
-              <SubProductsListHeading color="green">
+              <SubProductsListHeading color="blue.500">
                 Billing
               </SubProductsListHeading>
               <p>Build and scale your recurring business model</p>
@@ -51,10 +51,10 @@ export default function ProductsDropdown() {
           </Flex>
           <Flex mt="1rem">
             <div>
-              <Logo color="teal" />
+              <Logo color="purple.500" />
             </div>
             <div>
-              <SubProductsListHeading color="teal">
+              <SubProductsListHeading color="purple">
                 Connect
               </SubProductsListHeading>
               <p style={{ marginBottom: 0 }}>
